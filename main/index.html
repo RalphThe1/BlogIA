@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diário de IA</title>
+  <meta name="description" content="Registo semanal da disciplina de Inteligência Artificial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="rail">
+      <header class="masthead">
+        <h1>Diário de IA</h1>
+        <p>O que fui aprendendo, semana a semana.</p>
+      </header>
+      <nav aria-label="Semanas">
+        <ul id="indice"></ul>
+      </nav>
+    </aside>
+
+    <main id="entradas" aria-live="polite"></main>
+  </div>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="fechar" id="fechar" aria-label="Fechar imagem">Fechar</button>
+    <figure>
+      <img id="lb-img" alt="">
+      <figcaption id="lb-legenda"></figcaption>
+    </figure>
+  </div>
+
+  <footer class="rodape">
+    <p>Disciplina de Inteligência Artificial · <span id="ano"></span></p>
+  </footer>
+
+  <script src="posts.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+Põe aqui as fotos de cada semana (por exemplo semana1-grafico.jpg).
+Depois refere o nome do ficheiro em posts.js.
