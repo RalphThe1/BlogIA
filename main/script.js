@@ -8,6 +8,7 @@
 
   document.getElementById("ano").textContent = new Date().getFullYear();
 
+  // Ordena os posts da maior semana para a menor
   const posts = [...POSTS].sort((a, b) => b.semana - a.semana);
 
   if (posts.length === 0) {
@@ -26,35 +27,35 @@
   posts.forEach((p) => {
     const id = "semana-" + p.semana;
 
-    // 1. Índice Lateral
+    // Índice Lateral
     const li = el("li");
     const a = el("a", "", "Semana " + p.semana);
     a.href = "#" + id;
     li.appendChild(a);
     indice.appendChild(li);
 
-    // 2. Artigo da Entrada
+    // Cartão da Semana
     const art = el("article", "entrada");
     art.id = id;
 
-    // Cabeçalho da Semana
+    // Cabecalho
     const cab = el("header", "entrada-cab");
-    cab.appendChild(el("span", "num", "Sem " + p.semana));
+    cab.appendChild(el("span", "num", "Semana " + p.semana));
     const bloco = el("div");
     bloco.appendChild(el("h2", "", p.titulo));
     bloco.appendChild(el("p", "data", p.data));
     cab.appendChild(bloco);
     art.appendChild(cab);
 
-    // Checklist de Objetivos
+    // Lista de Objetivos
     if (p.objetivos && p.objetivos.length) {
       const objBox = el("div", "objetivos-box");
-      objBox.appendChild(el("h3", "", "🎯 Objetivos da Semana"));
+      objBox.appendChild(el("h3", "", "🎯 Objetivos de Desenvolvimento"));
       const ul = el("ul", "lista-objetivos");
 
       p.objetivos.forEach((obj) => {
-        const liObj = el("li", obj.feito ? "cumprido" : "pendente");
-        liObj.innerHTML = `${obj.feito ? '✅' : '⏳'} ${obj.texto}`;
+        const liObj = el("li");
+        liObj.textContent = `${obj.feito ? '✅ [Concluído]' : '⏳ [Em Curso]'} ${obj.texto}`;
         ul.appendChild(liObj);
       });
 
@@ -70,7 +71,7 @@
       .forEach((par) => texto.appendChild(el("p", "", par.trim())));
     art.appendChild(texto);
 
-    // Galeria de Fotos
+    // Galeria de Imagens
     if (p.fotos && p.fotos.length) {
       const galeria = el("div", "galeria");
       p.fotos.forEach((f) => {
@@ -90,13 +91,14 @@
       });
       art.appendChild(galeria);
     }
-
-    // Botão de Pedir Feedback sobre a semana
+    
+    // Botão de Pedir Feedback ao Professor
     const footerEntrada = el("div", "entrada-footer");
-    const mailLink = el("a", "btn-semana-feedback", "✉️ Pedir feedback do professor sobre esta semana");
-    mailLink.href = `mailto:professor@uma.pt?subject=Feedback%20Survivor-Bot%20-%20Semana%20${p.semana}`;
+    const mailLink = el("a", "btn-semana-feedback", "✉️ Enviar dúvida / sugestão de feedback sobre esta semana em específico.");
+    mailLink.href = `mailto:2145523@student.uma.pt?cc=2132423@student.uma.pt,2122123@student.uma.pt,2172524@student.uma.pt,2103523@student.uma.pt&subject=Feedback%20Survivor-Bot%20-%20Semana%20${p.semana}`;
     footerEntrada.appendChild(mailLink);
     art.appendChild(footerEntrada);
+    
 
     entradas.appendChild(art);
   });

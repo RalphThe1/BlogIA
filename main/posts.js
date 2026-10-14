@@ -8,37 +8,42 @@
    - fotos:      imagens do robô, algoritmos ou testes
    ============================================================ */
 
+/* ============================================================
+   REGISTO DE PROGRESSO DO PROJETO SURVIVOR-BOT
+   ============================================================ */
+
 const POSTS = [
   {
     semana: 2,
-    titulo: "Lógica dos Zombies e Leitura do Cheiro",
-    data: "7 de outubro de 2026",
+    titulo: "Análise das Regras de Movimento dos Zombies e Mecânica de Alarme",
+    data: "14 de outubro de 2026",
     objetivos: [
-      { texto: "Implementar movimentação aleatória dos Zombies (sentido horário em colisão)", feito: true },
-      { texto: "Criar lógica do alarme ao apanhar a peça da mota", feito: true },
-      { texto: "Testar deteção de cheiro (1 vs 2 casas de distância)", feito: false }
+      { texto: "Modelar o algoritmo de movimento aleatório dos Zombies (1 casa por turno)", feito: true },
+      { texto: "Implementar desvio no sentido horário para colisões e bordas do tabuleiro", feito: true },
+      { texto: "Programar a mudança de prioridade (←, ↑, ↓) quando o alarme da peça está ativo", feito: false }
     ],
     descricao:
-      "Nesta semana focamo-nos na lógica dos Zombies. Definimos a movimentação aleatória de 1 casa por turno e a regra de desvio no sentido horário quando tentam ocupar uma casa inválida ou sair do tabuleiro 6x6.\n\n" +
-      "Também começamos a tratar o estado do alarme: quando o Survivor-Bot apanha uma peça, os zombies mudam a sua prioridade de movimento para ←, ↑, ↓ em direção ao herói.",
-    fotos: [
-      // { ficheiro: "semana2-zombie-logic.png", legenda: "Simulação do caminho dos zombies com alarme ativo" }
-    ],
+      "Aprofundamos a implementação da lógica dos Zombies com base nos requisitos do enunciado[cite: 2]. " +
+      "Segundo o enunciado, cada Zombie move-se uma casa de cada vez e dois Zombies não podem ocupar a mesma posição simultaneamente[cite: 2]. " +
+      "Implementamos a verificação de limites do tabuleiro 6x6 e a rotação no sentido horário caso a célula pretendida esteja ocupada[cite: 1, 2].\n\n" +
+      "Neste momento estamos a finalizar a transição de estado quando o Survivor-Bot recolhe uma peça e ativa o alarme[cite: 2]: " +
+      "os Zombies passam a ser atraídos diretamente para o herói seguindo a ordem de prioridade definida pelo professor (←, ↑, ↓)[cite: 2].",
+    fotos: [],
   },
   {
     semana: 1,
-    titulo: "Modelação do Ambiente 6x6 e Regras do Jogo",
-    data: "30 de setembro de 2026",
+    titulo: "Análise do Enunciado e Modelação do Tabuleiro 6x6",
+    data: "7 de outubro de 2026",
     objetivos: [
-      { texto: "Criar a grelha de simulação 6x6", feito: true },
-      { texto: "Posicionar Survivor-Bot em (1,1) e Mota em (6,6)", feito: true },
-      { texto: "Implementar distribuição aleatória das 2 Peças e da Munição", feito: true }
+      { texto: "Estruturar o mapa do jogo num array 6x6", feito: true },
+      { texto: "Definir coordenadas iniciais do Survivor-Bot (1,1) e da Mota (6,6)", feito: true },
+      { texto: "Implementar o sorteio de coordenadas (I, J) via dados para peças e munição", feito: true }
     ],
     descricao:
-      "Arrancamos com o projeto Survivor-Bot definindo as estruturas base do jogo por turnos.\n\n" +
-      "Configuramos as posições iniciais fixas segundo o enunciado: Survivor-Bot em (1,1), Mota em (6,6) e os dois Zombies em (1,6) e (6,1). Lançamos os dados para a geração aleatória das coordenadas (I,J) para as peças e munição.",
-    fotos: [
-      // { ficheiro: "semana1-tabuleiro.png", legenda: "Representação inicial do tabuleiro 6x6" }
-    ],
+      "Apresentação e análise detalhada do enunciado do projeto 'Survivor-Bot' para a disciplina de Inteligência Artificial[cite: 1]. " +
+      "Iniciamos a construção da simulação configurando o ambiente do jogo[cite: 1]: " +
+      "posicionamos o Survivor-Bot na coordenada (1,1), a Mota avariada em (6,6) e os dois Zombies nas posições opostas (1,6) e (6,1)[cite: 1, 2].\n\n" +
+      "Também codificamos a lógica de sorteio através do lançamento virtual de 2 dados para distribuir aleatoriamente no tabuleiro as 2 peças e a munição de pistola no arranque do jogo[cite: 1, 2].",
+    fotos: [],
   }
 ];
