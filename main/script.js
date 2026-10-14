@@ -12,7 +12,7 @@
 
   if (posts.length === 0) {
     entradas.innerHTML =
-      '<p class="vazio">Ainda não há entradas. Abre o ficheiro posts.js e adiciona a primeira semana.</p>';
+      '<p class="vazio">Ainda não há entradas. Adiciona a primeira semana em posts.js.</p>';
     return;
   }
 
@@ -26,25 +26,43 @@
   posts.forEach((p) => {
     const id = "semana-" + p.semana;
 
-    // índice lateral
+    // 1. Índice Lateral
     const li = el("li");
     const a = el("a", "", "Semana " + p.semana);
     a.href = "#" + id;
     li.appendChild(a);
     indice.appendChild(li);
 
-    // entrada
+    // 2. Artigo da Entrada
     const art = el("article", "entrada");
     art.id = id;
 
+    // Cabeçalho da Semana
     const cab = el("header", "entrada-cab");
-    cab.appendChild(el("span", "num", String(p.semana)));
+    cab.appendChild(el("span", "num", "Sem " + p.semana));
     const bloco = el("div");
     bloco.appendChild(el("h2", "", p.titulo));
     bloco.appendChild(el("p", "data", p.data));
     cab.appendChild(bloco);
     art.appendChild(cab);
 
+    // Checklist de Objetivos
+    if (p.objetivos && p.objetivos.length) {
+      const objBox = el("div", "objetivos-box");
+      objBox.appendChild(el("h3", "", "🎯 Objetivos da Semana"));
+      const ul = el("ul", "lista-objetivos");
+
+      p.objetivos.forEach((obj) => {
+        const liObj = el("li", obj.feito ? "cumprido" : "pendente");
+        liObj.innerHTML = `${obj.feito ? '✅' : '⏳'} ${obj.texto}`;
+        ul.appendChild(liObj);
+      });
+
+      objBox.appendChild(ul);
+      art.appendChild(objBox);
+    }
+
+    // Texto de Descrição
     const texto = el("div", "texto");
     String(p.descricao || "")
       .split(/\n\s*\n/)
@@ -52,6 +70,7 @@
       .forEach((par) => texto.appendChild(el("p", "", par.trim())));
     art.appendChild(texto);
 
+    // Galeria de Fotos
     if (p.fotos && p.fotos.length) {
       const galeria = el("div", "galeria");
       p.fotos.forEach((f) => {
@@ -72,9 +91,17 @@
       art.appendChild(galeria);
     }
 
+    // Botão de Pedir Feedback sobre a semana
+    const footerEntrada = el("div", "entrada-footer");
+    const mailLink = el("a", "btn-semana-feedback", "✉️ Pedir feedback do professor sobre esta semana");
+    mailLink.href = `mailto:professor@uma.pt?subject=Feedback%20Survivor-Bot%20-%20Semana%20${p.semana}`;
+    footerEntrada.appendChild(mailLink);
+    art.appendChild(footerEntrada);
+
     entradas.appendChild(art);
   });
 
+  // Funções da Lightbox
   function abrir(src, legenda) {
     lbImg.src = src;
     lbImg.alt = legenda || "";
