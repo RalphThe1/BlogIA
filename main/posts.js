@@ -31,7 +31,12 @@ const POSTS = [
       "Compreendemos as regras do jogo por turnos num tabuleiro 6x6, os papéis do Survivor-Bot, Mota e Zombies, bem como as mecânicas de alarme e cheiro[cite: 1, 2].\n\n" +
       "Paralelamente, fizemos a triagem de todo o hardware fornecido (componentes LEGO Mindstorms EV3). " +
       "Identificámos os servomotores, o sensor giroscópico, o sensor ultrassónico, o sensor de cor/luz e os botões de toque.\n\n" +
-      "Iniciamos também a planificação da estrutura física do robô: desenhámos a base diferencial equipada com 2 Servomotores Grandes para a tração e 1 Roda Esférica Caster para apoio e estabilização de movimento.",
+      "Iniciamos também a planificação da estrutura física do robô: desenhámos a base diferencial equipada com 2 Servomotores Grandes para a tração e 1 Roda Esférica Caster para apoio e estabilização de movimento."+
+      // Adicionar dentro da descricao da Semana 1 no posts.js:
+      "Decidimos adotar uma temática estética inspirada no Wall-E para o design do Survivor-Bot[cite: 1]. " +
+      "Esta escolha alinha-se com o cenário pós-apocalíptico do enunciado (inundado por zombies)[cite: 1]: " +
+      "o nosso robô assume o papel de um explorador solitário que usa sensores e algoritmos de IA para navegar no tabuleiro 6x6, " +
+      "recolher as peças necessárias e reparar a mota para escapar[cite: 1, 2].",
     fotos: [
       { 
         ficheiro: "motor-grande.jpg", 
