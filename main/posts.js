@@ -1,49 +1,62 @@
 /* ============================================================
-   ESTRUTURA DOS RELATÓRIOS DO SURVIVOR-BOT
-   - semana:     número da semana
-   - titulo:     título da fase do projeto
-   - data:       intervalo de datas
-   - objetivos:  lista de { texto, feito (true/false) }
-   - descricao:  resumo técnico do que foi feito
-   - fotos:      imagens do robô, algoritmos ou testes
-   ============================================================ */
-
-/* ============================================================
    REGISTO DE PROGRESSO DO PROJETO SURVIVOR-BOT
    ============================================================ */
 
 const POSTS = [
   {
     semana: 2,
-    titulo: "Análise das Regras de Movimento dos Zombies e Mecânica de Alarme",
-    data: "14 de outubro de 2026",
+    titulo: "Próxima Fase: Modelação do Algoritmo e Regras de Jogo",
+    data: "A publicar em breve",
     objetivos: [
-      { texto: "Modelar o algoritmo de movimento aleatório dos Zombies (1 casa por turno)", feito: true },
-      { texto: "Implementar desvio no sentido horário para colisões e bordas do tabuleiro", feito: true },
-      { texto: "Programar a mudança de prioridade (←, ↑, ↓) quando o alarme da peça está ativo", feito: false }
+      { texto: "Testar o movimento da base robótica no tabuleiro 6x6", feito: false },
+      { texto: "Implementar a lógica de turnos e movimento dos Zombies", feito: false },
+      { texto: "Programar o sensor giroscópico para viragens de 90° precisas", feito: false }
     ],
     descricao:
-      "Aprofundamos a implementação da lógica dos Zombies com base nos requisitos do enunciado[cite: 2]. " +
-      "Segundo o enunciado, cada Zombie move-se uma casa de cada vez e dois Zombies não podem ocupar a mesma posição simultaneamente[cite: 2]. " +
-      "Implementamos a verificação de limites do tabuleiro 6x6 e a rotação no sentido horário caso a célula pretendida esteja ocupada[cite: 1, 2].\n\n" +
-      "Neste momento estamos a finalizar a transição de estado quando o Survivor-Bot recolhe uma peça e ativa o alarme[cite: 2]: " +
-      "os Zombies passam a ser atraídos diretamente para o herói seguindo a ordem de prioridade definida pelo professor (←, ↑, ↓)[cite: 2].",
+      "Na próxima semana vamos iniciar a integração da lógica de IA do enunciado com a base física do robô. " +
+      "Iremos focar-nos no controlo de movimento dos motores e no algoritmo de navegação pelas casas do tabuleiro.",
     fotos: [],
   },
   {
     semana: 1,
-    titulo: "Análise do Enunciado e Modelação do Tabuleiro 6x6",
+    titulo: "Análise do Enunciado, Inventário de Hardware e Início da Base Física",
     data: "7 de outubro de 2026",
     objetivos: [
-      { texto: "Estruturar o mapa do jogo num array 6x6", feito: true },
-      { texto: "Definir coordenadas iniciais do Survivor-Bot (1,1) e da Mota (6,6)", feito: true },
-      { texto: "Implementar o sorteio de coordenadas (I, J) via dados para peças e munição", feito: true }
+      { texto: "Análise detalhada do enunciado e requisitos do projeto Survivor-Bot", feito: true },
+      { texto: "Inventariação e teste dos motores e sensores recebidos no kit", feito: true },
+      { texto: "Planificação da estrutura física e início da montagem da base de tração (2 motores + roda caster)", feito: true }
     ],
     descricao:
-      "Apresentação e análise detalhada do enunciado do projeto 'Survivor-Bot' para a disciplina de Inteligência Artificial[cite: 1]. " +
-      "Iniciamos a construção da simulação configurando o ambiente do jogo[cite: 1]: " +
-      "posicionamos o Survivor-Bot na coordenada (1,1), a Mota avariada em (6,6) e os dois Zombies nas posições opostas (1,6) e (6,1)[cite: 1, 2].\n\n" +
-      "Também codificamos a lógica de sorteio através do lançamento virtual de 2 dados para distribuir aleatoriamente no tabuleiro as 2 peças e a munição de pistola no arranque do jogo[cite: 1, 2].",
-    fotos: [],
+      "Arrancamos com a disciplina de Inteligência Artificial analisando o enunciado do 'Survivor-Bot'[cite: 1]. " +
+      "Compreendemos as regras do jogo por turnos num tabuleiro 6x6, os papéis do Survivor-Bot, Mota e Zombies, bem como as mecânicas de alarme e cheiro[cite: 1, 2].\n\n" +
+      "Paralelamente, fizemos a triagem de todo o hardware fornecido (componentes LEGO Mindstorms EV3). " +
+      "Identificámos os servomotores, o sensor giroscópico, o sensor ultrassónico, o sensor de cor/luz e os botões de toque.\n\n" +
+      "Iniciamos também a planificação da estrutura física do robô: desenhámos a base diferencial equipada com 2 Servomotores Grandes para a tração e 1 Roda Esférica Caster para apoio e estabilização de movimento.",
+    fotos: [
+      { 
+        ficheiro: "motor-grande.jpg", 
+        legenda: "Servomotor Grande EV3 (x2): Responsável pela tração e movimento exato das rodas." 
+      },
+      { 
+        ficheiro: "roda-caster.jpg", 
+        legenda: "Esfera Caster (Roda de Apoio): Dá equilíbrio à base e permite virar 360° no próprio eixo." 
+      },
+      { 
+        ficheiro: "sensor-giroscopio.jpg", 
+        legenda: "Sensor Giroscópico: Mede a rotação do robô para garantir viragens perfeitas de 90°." 
+      },
+      { 
+        ficheiro: "sensor-ultrassons.jpg", 
+        legenda: "Sensor de Ultrassons: Usado para medir distâncias e simular o reconhecimento / binóculos." 
+      },
+      { 
+        ficheiro: "sensor-cor.jpg", 
+        legenda: "Sensor de Cor: Permite detetar as linhas ou casas marcadas no chão do tabuleiro 6x6." 
+      },
+      { 
+        ficheiro: "sensor-toque.jpg", 
+        legenda: "Sensor de Toque (x3): Botão mecânico para contacto físico ou confirmação de ações." 
+      }
+    ],
   }
 ];
