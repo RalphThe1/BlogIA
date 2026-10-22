@@ -20,7 +20,7 @@ const POSTS = [
   {
     semana: "1.2",
     titulo: "Storytelling WALL-E e Montagem das Lagartas de Tração",
-    data: "7 de outubro de 2026",
+    data: "19 de outubro a 23 de outubro de 2026",
     objetivos: [
       { texto: "Reinterpretação da narrativa: transição para temática WALL-E, robôs patrulha e recolha de plantas", feito: true },
       { texto: "Conceção e montagem do sistema de tração por lagartas triangulares", feito: true },
@@ -46,7 +46,7 @@ const POSTS = [
   {
     semana: "1.1",
     titulo: "Análise do Enunciado, Inventário de Hardware e Início da Base Física",
-    data: "7 de outubro de 2026",
+    data: "19 de outubro a 23 de outubro de 2026",
     objetivos: [
       { texto: "Análise detalhada do enunciado e requisitos do projeto Survivor-Bot", feito: true },
       { texto: "Inventariação e teste dos motores e sensores recebidos no kit", feito: true },
