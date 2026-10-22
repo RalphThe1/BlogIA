@@ -18,7 +18,33 @@ const POSTS = [
     fotos: [],
   },
   {
-    semana: 1,
+    semana: "1.2",
+    titulo: "Storytelling WALL-E e Montagem das Lagartas de Tração",
+    data: "7 de outubro de 2026",
+    objetivos: [
+      { texto: "Reinterpretação da narrativa: transição para temática WALL-E, robôs patrulha e recolha de plantas", feito: true },
+      { texto: "Conceção e montagem do sistema de tração por lagartas triangulares", feito: true },
+      { texto: "Testes práticos de resistência e mobilidade das lagartas", feito: true }
+    ],
+    descricao:
+      "Para dar uma identidade única ao projeto, decidimos adaptar o cenário original do enunciado para o universo do WALL-E!\n\n" +
+      "Em vez da temática tradicional de zombies e peças de mota, o nosso robô assume o papel de um explorador num planeta deserto. " +
+      "O objetivo passa por usar algoritmos de IA para navegar no tabuleiro 6x6, evitar robôs patrulha (antigos zombies) e recolher plantas para salvar a Terra.\n\n" +
+      "Inspirados no próprio WALL-E, desenhámos e montámos um sistema de tração com lagartas em formato triangular. " +
+      "Esta estrutura física já se encontra totalmente montada e testada, garantindo elevada estabilidade e aderência.",
+    fotos: [
+      { 
+        ficheiro: "lagarta-triangular-angulo1.jpg", 
+        legenda: "Estrutura de Lagartas Triangulares: Design robusto e funcional inspirado no robô WALL-E." 
+      },
+      { 
+        ficheiro: "lagarta-triangular-perspectiva.jpg", 
+        legenda: "Perspectiva de Montagem: Testes de encaixe dos eixos Technic e módulos de lagarta." 
+      }
+    ],
+  },
+  {
+    semana: "1.1",
     titulo: "Análise do Enunciado, Inventário de Hardware e Início da Base Física",
     data: "7 de outubro de 2026",
     objetivos: [
@@ -31,12 +57,7 @@ const POSTS = [
       "Compreendemos as regras do jogo por turnos num tabuleiro 6x6, os papéis do Survivor-Bot, Mota e Zombies, bem como as mecânicas de alarme e cheiro[cite: 1, 2].\n\n" +
       "Paralelamente, fizemos a triagem de todo o hardware fornecido (componentes LEGO Mindstorms EV3). " +
       "Identificámos os servomotores, o sensor giroscópico, o sensor ultrassónico, o sensor de cor/luz e os botões de toque.\n\n" +
-      "Iniciamos também a planificação da estrutura física do robô: desenhámos a base diferencial equipada com 2 Servomotores Grandes para a tração e 1 Roda Esférica Caster para apoio e estabilização de movimento."+
-      // Adicionar dentro da descricao da Semana 1 no posts.js:
-      "Decidimos adotar uma temática estética inspirada no Wall-E para o design do Survivor-Bot[cite: 1]. " +
-      "Esta escolha alinha-se com o cenário pós-apocalíptico do enunciado (inundado por zombies)[cite: 1]: " +
-      "o nosso robô assume o papel de um explorador solitário que usa sensores e algoritmos de IA para navegar no tabuleiro 6x6, " +
-      "recolher as peças necessárias e reparar a mota para escapar[cite: 1, 2].",
+      "Iniciamos também a planificação da estrutura física do robô: desenhámos a base diferencial equipada com 2 Servomotores Grandes para a tração e 1 Roda Esférica Caster para apoio e estabilização de movimento.",
     fotos: [
       { 
         ficheiro: "motor-grande.jpg", 
