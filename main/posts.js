@@ -5,17 +5,48 @@
 const POSTS = [
   {
     semana: 2,
-    titulo: "Próxima Fase: Modelação do Algoritmo e Regras de Jogo",
-    data: "A publicar em breve",
+    titulo: "Construção do Torso, Fixação dos Motores e Reorganização dos Sensores",
+    data: "26 de outubro a 30 de outubro de 2026",
     objetivos: [
-      { texto: "Testar o movimento da base robótica no tabuleiro 6x6", feito: false },
-      { texto: "Implementar a lógica de turnos e movimento dos Zombies", feito: false },
-      { texto: "Programar o sensor giroscópico para viragens de 90° precisas", feito: false }
+      { texto: "Montagem do torso do robô (painéis frontal e traseiro)", feito: true },
+      { texto: "Fixação definitiva dos servomotores de tração na estrutura", feito: true },
+      { texto: "Ajuste e reposicionamento estratégico dos sensores na base", feito: true },
+      { texto: "Desenvolvimento do suporte para fixação do bloco EV3", feito: false },
+      { texto: "Conceção e montagem da cabeça do robô (WALL-E)", feito: false },
+      { texto: "Definição do ecossistema de software e linguagens de programação a utilizar", feito: false }
     ],
     descricao:
-      "Na próxima semana vamos iniciar a integração da lógica de IA do enunciado com a base física do robô. " +
-      "Iremos focar-nos no controlo de movimento dos motores e no algoritmo de navegação pelas casas do tabuleiro.",
-    fotos: [],
+      "Avançámos significativamente na construção física do robô durante esta semana. " +
+      "Concentrámo-nos no desenvolvimento do torso do WALL-E, construindo com sucesso as estruturas principal, frontal e traseira.\n\n" +
+      "Os servomotores de tração já se encontram oficialmente fixos de forma sólida ao chassis. " +
+      "Aproveitámos também esta fase para reavaliar a disposição do hardware e mudar a posição de alguns sensores, garantindo melhores leituras e menor interferência durante a navegação.\n\n" +
+      "Nas próximas sessões, o foco estará em criar o suporte para acoplar o bloco EV3 ao torso, desenhar a cabeça do robô e tomar as decisões finais relativamente às linguagens e tecnologias de programação a implementar no projeto.",
+    fotos: [
+      { 
+        ficheiro: "frente_final.jpg", 
+        legenda: "Estrutura Frontal do Torso: Detalhe do chassis com motores integrados e suporte reforçado." 
+      },
+      { 
+        ficheiro: "frente_final_angulo2.jpg", 
+        legenda: "Vista Frontal Alternativa: Alinhamento das lagartas e alocação de espaço para os componentes." 
+      },
+      { 
+        ficheiro: "tras_final.jpg", 
+        legenda: "Parte Traseira Concluída: Grelha estrutural e fecho do torso para maior rigidez." 
+      },
+      { 
+        ficheiro: "tras_final_angulo2.jpg", 
+        legenda: "Perspectiva Traseira/Superior: Posicionamento dos motores e passagens para fiação." 
+      },
+      { 
+        ficheiro: "vista_baixo_construcao.jpg", 
+        legenda: "Vista Inferior do Chassis: Disposição interna dos sensores e ponto de fixação central." 
+      },
+      { 
+        ficheiro: "vista_cima_final.jpg", 
+        legenda: "Vista Superior da Base: Área reservada para a montagem futura do bloco EV3 e da cabeça." 
+      }
+    ],
   },
   {
     semana: "1.2",
