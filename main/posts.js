@@ -64,6 +64,10 @@ const POSTS = [
         legenda: "Servomotor Grande EV3 (x2): Responsável pela tração e movimento exato das rodas." 
       },
       { 
+        ficheiro: "motor-pequeno.jpg", 
+        legenda: "Servomotor Pequeno EV3 (x1): Responsável por pecas que não requerem tanta potência." 
+      },
+      { 
         ficheiro: "roda-caster.jpg", 
         legenda: "Esfera Caster (Roda de Apoio): Dá equilíbrio à base e permite virar 360° no próprio eixo." 
       },
@@ -81,7 +85,7 @@ const POSTS = [
       },
       { 
         ficheiro: "sensor-toque.jpg", 
-        legenda: "Sensor de Toque (x3): Botão mecânico para contacto físico ou confirmação de ações." 
+        legenda: "Sensor de Toque (x2): Botão mecânico para contacto físico ou confirmação de ações." 
       }
     ],
   }
