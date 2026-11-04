@@ -4,23 +4,62 @@
 
 const POSTS = [
   {
-    semana: 2,
+    semana: "2.2",
+    titulo: "Integração do Suporte Superior e Instalação Definitiva do Bloco de Sensores",
+    data: "26 de outubro a 30 de outubro de 2026",
+    objetivos: [
+      { texto: "Montagem do suporte físico superior para encaixe e fixação do bloco EV3", feito: true },
+      { texto: "Instalação do módulo frontal de sensores (Ultrassónico, Giroscópico e Toque)", feito: true },
+      { texto: "Alinhamento das portas de ligação e arrumação dos pontos de fiação", feito: true },
+      { texto: "Conceção estética e física da cabeça do robô (WALL-E)", feito: false },
+      { texto: "Definição do ecossistema de software e linguagens de programação a utilizar", feito: false }
+    ],
+    descricao:
+      "Nesta segunda fase da Semana 2, concretizámos a montagem do suporte superior do chassis, criando uma plataforma estável e segura para acoplar o tijolo programável EV3.\n\n" +
+      "Além disso, fixámos na parte frontal o módulo principal de sensores, integrando o Sensor Ultrassónico centralmente ladeado pelos Sensores de Toque e o Sensor Giroscópico. " +
+      "Esta configuração garante excelente visibilidade frontal e facilidade no encaminhamento dos cabos para as respetivas portas de entrada do EV3.\n\n" +
+      "Com a estrutura do corpo praticamente concluída, o próximo passo centra-se no desenho da cabeça inspirada no WALL-E e na tomada de decisão sobre a stack de software a implementar.",
+    fotos: [
+      { 
+        ficheiro: "suporte_ev3_e_sensores_frente.jpg", 
+        legenda: "Módulo Frontal de Sensores: Sensor Ultrassónico central, Sensores de Toque e Giroscópio integrados." 
+      },
+      { 
+        ficheiro: "suporte_ev3_e_sensores_perspectiva.jpg", 
+        legenda: "Perspectiva Frontal/Lateral: Estrutura do suporte superior para acoplamento do tijolo EV3." 
+      },
+      { 
+        ficheiro: "suporte_ev3_e_sensores_tras.jpg", 
+        legenda: "Vista Posterior do Suporte: Disposição das portas de ligação dos sensores e passagem de fiação." 
+      },
+      { 
+        ficheiro: "suporte_ev3_superior.jpg", 
+        legenda: "Plataforma Superior do Chassis: Base reforçada com travamentos Technic para suporte do bloco EV3." 
+      },
+      { 
+        ficheiro: "vista_topo_estrutura_completa.jpg", 
+        legenda: "Vista Superior Geral: Alinhamento das lagartas com o torso e o novo módulo de suporte." 
+      },
+      { 
+        ficheiro: "vista_baixo_estrutura.jpg", 
+        legenda: "Vista Inferior: Reforços estruturais inferiores e alinhamento dos motores de tração." 
+      }
+    ],
+  },
+  {
+    semana: "2.1",
     titulo: "Construção do Torso, Fixação dos Motores e Reorganização dos Sensores",
     data: "26 de outubro a 30 de outubro de 2026",
     objetivos: [
       { texto: "Montagem do torso do robô (painéis frontal e traseiro)", feito: true },
       { texto: "Fixação definitiva dos servomotores de tração na estrutura", feito: true },
-      { texto: "Ajuste e reposicionamento estratégico dos sensores na base", feito: true },
-      { texto: "Desenvolvimento do suporte para fixação do bloco EV3", feito: false },
-      { texto: "Conceção e montagem da cabeça do robô (WALL-E)", feito: false },
-      { texto: "Definição do ecossistema de software e linguagens de programação a utilizar", feito: false }
+      { texto: "Ajuste e reposicionamento estratégico dos sensores na base", feito: true }
     ],
     descricao:
-      "Avançámos significativamente na construção física do robô durante esta semana. " +
+      "Avançámos significativamente na construção física do robô durante esta fase inicial da semana. " +
       "Concentrámo-nos no desenvolvimento do torso do WALL-E, construindo com sucesso as estruturas principal, frontal e traseira.\n\n" +
       "Os servomotores de tração já se encontram oficialmente fixos de forma sólida ao chassis. " +
-      "Aproveitámos também esta fase para reavaliar a disposição do hardware e mudar a posição de alguns sensores, garantindo melhores leituras e menor interferência durante a navegação.\n\n" +
-      "Nas próximas sessões, o foco estará em criar o suporte para acoplar o bloco EV3 ao torso, desenhar a cabeça do robô e tomar as decisões finais relativamente às linguagens e tecnologias de programação a implementar no projeto.",
+      "Aproveitámos também esta fase para reavaliar a disposição do hardware e mudar a posição de alguns sensores, garantindo melhores leituras e menor interferência durante a navegação.",
     fotos: [
       { 
         ficheiro: "frente_final.jpg", 
