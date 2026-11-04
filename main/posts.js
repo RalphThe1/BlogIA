@@ -15,7 +15,7 @@ const POSTS = [
       { texto: "Fixação definitiva do bloco EV3 com distribuição equilibrada de peso", feito: true },
       { texto: "Conexão e cablagem de todos os motores e sensores ao EV3", feito: true },
       { texto: "Primeiros testes de locomoção e rotação em grelha 6x6 (com registo de vídeo)", feito: true },
-      { texto: "Ajuste fino dos parâmetros de travagem e viragens de 90°", feito: false }
+      { texto: "Ajuste fino dos parâmetros de travagem e viragens de 90°", feito: true }
     ],
     descricao:
       "Durante esta semana enfrentámos o desafio de ter de reformular a base física do robô. " +
