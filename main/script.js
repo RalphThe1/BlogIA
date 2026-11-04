@@ -9,7 +9,7 @@
   document.getElementById("ano").textContent = new Date().getFullYear();
 
   // Ordena os posts da maior semana para a menor
-  const posts = [...POSTS].sort((a, b) => b.semana - a.semana);
+  const posts = [...POSTS].sort((a, b) => parseFloat(b.semana) - parseFloat(a.semana));
 
   if (posts.length === 0) {
     entradas.innerHTML =
@@ -25,7 +25,7 @@
   }
 
   posts.forEach((p) => {
-    const id = "semana-" + p.semana;
+    const id = "semana-" + String(p.semana).replace(".", "-");
 
     // Índice Lateral
     const li = el("li");
@@ -38,7 +38,7 @@
     const art = el("article", "entrada");
     art.id = id;
 
-    // Cabecalho
+    // Cabeçalho
     const cab = el("header", "entrada-cab");
     cab.appendChild(el("span", "num", "Semana " + p.semana));
     const bloco = el("div");
@@ -91,14 +91,39 @@
       });
       art.appendChild(galeria);
     }
-    
+
+    // Galeria / Secção de Vídeos
+    if (p.videos && p.videos.length) {
+      const galeriaVideos = el("div", "galeria galeria-videos");
+      p.videos.forEach((v) => {
+        const fig = el("figure", "fig-video");
+        const video = document.createElement("video");
+        video.controls = true;
+        video.preload = "metadata";
+
+        const source = document.createElement("source");
+        source.src = "videos/" + v.ficheiro;
+        source.type = "video/mp4";
+
+        video.appendChild(source);
+        fig.appendChild(video);
+
+        if (v.legenda) fig.appendChild(el("figcaption", "", v.legenda));
+        galeriaVideos.appendChild(fig);
+      });
+      art.appendChild(galeriaVideos);
+    }
+
     // Botão de Pedir Feedback ao Professor
     const footerEntrada = el("div", "entrada-footer");
-    const mailLink = el("a", "btn-semana-feedback", "✉️ Enviar dúvida / sugestão de feedback sobre esta semana em específico.");
+    const mailLink = el(
+      "a",
+      "btn-semana-feedback",
+      "✉️ Enviar dúvida / sugestão de feedback sobre esta semana em específico."
+    );
     mailLink.href = `mailto:2145523@student.uma.pt?cc=2132423@student.uma.pt,2122123@student.uma.pt,2172524@student.uma.pt,2103523@student.uma.pt&subject=Feedback%20Survivor-Bot%20-%20Semana%20${p.semana}`;
     footerEntrada.appendChild(mailLink);
     art.appendChild(footerEntrada);
-    
 
     entradas.appendChild(art);
   });

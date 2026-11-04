@@ -3,6 +3,66 @@
    ============================================================ */
 
 const POSTS = [
+  /* ============================================================
+   REGISTO DE PROGRESSO DO PROJETO SURVIVOR-BOT
+   ============================================================ */
+  {
+    semana: 3,
+    titulo: "Reestruturação da Base, Integração Completa do EV3 e Primeiros Testes no Tabuleiro",
+    data: "2 de novembro a 6 de novembro de 2026",
+    objetivos: [
+      { texto: "Reformulação da base física devido a incompatibilidades de encaixe do bloco EV3", feito: true },
+      { texto: "Fixação definitiva do bloco EV3 com distribuição equilibrada de peso", feito: true },
+      { texto: "Conexão e cablagem de todos os motores e sensores ao EV3", feito: true },
+      { texto: "Primeiros testes de locomoção e rotação em grelha 6x6 (com registo de vídeo)", feito: true },
+      { texto: "Ajuste fino dos parâmetros de travagem e viragens de 90°", feito: false }
+    ],
+    descricao:
+      "Durante esta semana enfrentámos o desafio de ter de reformular a base física do robô. " +
+      "Devido a problemas de estabilidade e ao encaixe do próprio bloco (brick) EV3 na estrutura anterior, optámos por reconstruir o chassis, garantindo que o tijolo programável ficasse perfeitamente ancorado e com acesso direto às portas de ligação.\n\n" +
+      "Após a conclusão da montagem, estabelecemos todas as ligações de cablagem entre os motores, sensores e o EV3. " +
+      "Realizámos com sucesso os primeiros testes práticos de navegação no tabuleiro 6x6, onde se comprovou a excelente mobilidade do robô ao realizar avanços de casa em casa e rotações precisas sobre a grelha.",
+    fotos: [
+      { 
+        ficheiro: "ev3_acoplado_frente.jpg", 
+        legenda: "Estrutura Frontal Final: Bloco EV3 totalmente integrado acima do módulo de sensores." 
+      },
+      { 
+        ficheiro: "ev3_acoplado_perfil_esquerdo.jpg", 
+        legenda: "Vista de Perfil Esquerdo: Alinhamento da tração de lagartas com a passagem dos cabos de dados." 
+      },
+      { 
+        ficheiro: "ev3_acoplado_perfil_direito.jpg", 
+        legenda: "Vista de Perfil Direito: Fixação firme do brick no chassis reconstruído para evitar desequilíbrios." 
+      },
+      { 
+        ficheiro: "ev3_acoplado_traseira.jpg", 
+        legenda: "Vista Traseira/Superior: Organização da cablagem ligada às portas de motores e sensores do EV3." 
+      },
+      { 
+        ficheiro: "ev3_acoplado_baixo.jpg", 
+        legenda: "Vista Inferior: Base do robô reforçada para resistir aos esforços mecânicos." 
+      },
+      { 
+        ficheiro: "logica_base_movimentacao.jpg", 
+        legenda: "Logica de Movimentação: Diagrama usando os blocos de progamação disponiblizados pela LEGO Mindstorms EV3." 
+      }
+    ],
+    videos: [
+      { 
+        ficheiro: "teste_tracao.mp4", 
+        legenda: "Teste de Arranque e Movimento Retilíneo: Verificação da tração de lagartas na grelha." 
+      },
+      { 
+        ficheiro: "teste_rotacao.mp4", 
+        legenda: "Teste de Rotação em Eixo: Manobra de viragem de 90° sobre a interseção do tabuleiro." 
+      },
+      { 
+        ficheiro: "teste_movimentacao_basica.mp4", 
+        legenda: "Navegação Contínua: Teste prático de deslocação entre células do tabuleiro de jogo." 
+      }
+    ],
+  },
   {
     semana: "2.2",
     titulo: "Integração do Suporte Superior e Instalação Definitiva do Bloco de Sensores",
@@ -11,8 +71,8 @@ const POSTS = [
       { texto: "Montagem do suporte físico superior para encaixe e fixação do bloco EV3", feito: true },
       { texto: "Instalação do módulo frontal de sensores (Ultrassónico, Giroscópico e Toque)", feito: true },
       { texto: "Alinhamento das portas de ligação e arrumação dos pontos de fiação", feito: true },
-      { texto: "Conceção estética e física da cabeça do robô (WALL-E)", feito: false },
-      { texto: "Definição do ecossistema de software e linguagens de programação a utilizar", feito: false }
+      { texto: "Conceção estética e física da cabeça do robô (WALL-E)", feito: true },
+      { texto: "Definição do ecossistema de software e linguagens de programação a utilizar", feito: true }
     ],
     descricao:
       "Nesta segunda fase da Semana 2, concretizámos a montagem do suporte superior do chassis, criando uma plataforma estável e segura para acoplar o tijolo programável EV3.\n\n" +
