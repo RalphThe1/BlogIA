@@ -7,6 +7,69 @@ const POSTS = [
    REGISTO DE PROGRESSO DO PROJETO SURVIVOR-BOT
    ============================================================ */
   {
+    semana: 4,
+    titulo: "Arquitetura de IA, Modelo Probabilístico (Markov), Planeamento A* e Simulador 6x6",
+    data: "9 de novembro a 13 de novembro de 2026",
+    objetivos: [
+      { texto: "Implementação da arquitetura modular em Python (WorldModel, Planner e Simulador)", feito: true },
+      { texto: "Modelação de incerteza espacial dos Robôs Anti-Vida com difusão de Markov e Radar EM", feito: true },
+      { texto: "Desenvolvimento do algoritmo de pesquisa A* ponderado pelo risco e custo de rotação", feito: true },
+      { texto: "Integração de comportamento adversário coordenado (Blinky + Pinky) e 4 modos de dificuldade", feito: true },
+      { texto: "Validação estatística através de benchmark automatizado (400 simulações)", feito: true }
+    ],
+    descricao:
+      "Nesta quarta semana transitámos da construção física para o desenvolvimento do núcleo de Inteligência Artificial do Survivor-Bot. " +
+      "Antes de implementar a lógica no bloco EV3, construímos um simulador completo em Python da grelha 6x6 para testar e validar os algoritmos de perceção, inferência e planeamento sob incerteza.\n\n" +
+      "A arquitetura foi dividida em dois módulos principais:\n" +
+      "• WorldModel (Representação de Conhecimento): Mantém um mapa de crenças probabilísticas sobre a localização dos Robôs Anti-Vida. Sempre que o Radar Eletromagnético (alcance Manhattan <= 2) ou a visão ortogonal detetam ou descartam ameaças, o modelo atualiza as probabilidades e propaga o movimento esperado dos inimigos através de um filtro de Markov.\n" +
+      "• Planner (Pesquisa e Decisão Tática): Utiliza uma variante do algoritmo A* onde o custo de cada célula combina a distância de Manhattan, o número de rotações de 90° (penalizando curvas desnecessárias no EV3), o histórico de visitas e o risco probabilístico de colisão. O agente decide dinamicamente entre avançar 1 ou 2 casas por turno, ativar travagem preventiva por radar, disparar o Taser cirúrgico (alcance adjacente com 100% de precisão), revistar robôs atordoados ou acionar o EMP direcional em 360°.\n\n" +
+      "Para testar a robustez do agente, implementámos 4 níveis de dificuldade (Fácil, Médio, Difícil e Caos), incluindo perseguição coordenada inspirada no Pac-Man (um robô em perseguição direta e outro em emboscada 2 casas à frente da orientação do Survivor quando o alarme dispara).\n\n" +
+      "Resultados do Benchmark (100 simulações por modo):\n" +
+      "• Modo Fácil: 81% Vitórias | 10% Capturado | 9% Timeout | Média: 24.1 turnos | Precisão Taser: 100%\n" +
+      "• Modo Médio: 53% Vitórias | 33% Capturado | 14% Timeout | Média: 22.5 turnos | Precisão Taser: 100%\n" +
+      "• Modo Difícil: 12% Vitórias | 72% Capturado | 16% Timeout | Média: 23.2 turnos | Precisão Taser: 100%\n" +
+      "• Modo Caos: 20% Vitórias | 79% Capturado | 1% Timeout | Média: 21.1 turnos | Precisão Taser: 100%",
+    graficos: [
+      {
+        tipo: "diagrama_arquitetura",
+        titulo: "Arquitetura de Decisão do Survivor-Bot (Ciclo por Turno)",
+        legenda: "Arquitetura de Software: Ciclo de perceção, atualização de crenças (WorldModel) e planeamento A*."
+      },
+      {
+        tipo: "mapa_astar",
+        titulo: "Planeamento A* Ponderado pelo Risco e Custo de Rotação",
+        legenda: "Modelo de Pesquisa A*: Contorno da zona de probabilidade de Markov (vermelho) e minimização de curvas."
+      },
+      {
+        tipo: "barras_empilhadas",
+        titulo: "Benchmark Survivor-Bot — 100 Simulações por Dificuldade",
+        subtitulo: "Precisão do Taser: 100.0% em todos os modos | Tabuleiro 6x6",
+        series: [
+          { nome: "Vitórias (%)", cor: "#22c55e" },
+          { nome: "Capturado (%)", cor: "#ef4444" },
+          { nome: "Timeout (%)", cor: "#f59e0b" }
+        ],
+        linhas: [
+          { label: "Modo Fácil",   valores: [81, 10, 9],  extra: "Média: 24.1 turnos" },
+          { label: "Modo Médio",   valores: [53, 33, 14], extra: "Média: 22.5 turnos" },
+          { label: "Modo Difícil", valores: [12, 72, 16], extra: "Média: 23.2 turnos" },
+          { label: "Modo Caos",    valores: [20, 79, 1],  extra: "Média: 21.1 turnos" }
+        ],
+        legenda: "Benchmark Estatístico (400 jogos): Comparação de taxas de vitória, captura e turnos médios por dificuldade."
+      }
+    ],
+    fotos: [
+      {
+        ficheiro: "simulacao_terminal_vitoria.png",
+        legenda: "Simulador 6x6 em Execução: Navegação tática, uso de Taser/EMP e entrega das plantas na Nave-Mãe."
+      },
+      { 
+        ficheiro: "simulacao_terminal_derrota.png", 
+        legenda: "Simulador 6x6 em Execução: Na qual nao foi possível o Survivor-Bot escapar dos Robôs Anti-Vida e foi capturado." 
+      }
+    ]
+  },
+  {
     semana: 3,
     titulo: "Reestruturação da Base, Integração Completa do EV3 e Primeiros Testes no Tabuleiro",
     data: "2 de novembro a 6 de novembro de 2026",

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="360" viewBox="0 0 820 360">
+  <defs>
+    <marker id="seta" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#38bdf8"/>
+    </marker>
+    <marker id="seta-verde" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" rx="14" fill="#0f172a"/>
+  <text x="410" y="38" fill="#f8fafc" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" text-anchor="middle">Arquitetura de Decisão do Survivor-Bot (Ciclo por Turno)</text>
+
+  <!-- Caixa 1: Ambiente / Sensores -->
+  <rect x="35" y="75" width="210" height="115" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+  <text x="140" y="102" fill="#38bdf8" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">1. Perceções &amp; Sensores</text>
+  <text x="140" y="125" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">• Visão Ortogonal (Ultrassons)</text>
+  <text x="140" y="145" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">• Radar EM (Manhattan ≤ 2)</text>
+  <text x="140" y="165" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">• Estado do Alarme &amp; Itens</text>
+
+  <!-- Seta 1 -> 2 -->
+  <line x1="245" y1="132" x2="298" y2="132" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#seta)"/>
+
+  <!-- Caixa 2: WorldModel -->
+  <rect x="305" y="75" width="210" height="115" rx="10" fill="#1e293b" stroke="#a855f7" stroke-width="2"/>
+  <text x="410" y="102" fill="#c084fc" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">2. WorldModel (Crenças)</text>
+  <text x="410" y="125" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">• Grelha 6×6 de Probabilidades</text>
+  <text x="410" y="145" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">• Filtro de Difusão de Markov</text>
+  <text x="410" y="165" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">• Memória de Plantas &amp; Stuns</text>
+
+  <!-- Seta 2 -> 3 -->
+  <line x1="515" y1="132" x2="568" y2="132" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#seta)"/>
+
+  <!-- Caixa 3: Planner -->
+  <rect x="575" y="75" width="210" height="115" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="680" y="102" fill="#fbbf24" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">3. Planner (Decisão)</text>
+  <text x="680" y="125" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">• Pesquisa A* Ponderada (Risco)</text>
+  <text x="680" y="145" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">• Penalização de Rotações 90°</text>
+  <text x="680" y="165" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">• Taser, EMP 360° &amp; Kiting</text>
+
+  <!-- Caixa 4: Ação / Atuadores -->
+  <rect x="245" y="235" width="330" height="85" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+  <text x="410" y="262" fill="#4ade80" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">4. Execução de Ação (Simulador / EV3)</text>
+  <text x="410" y="285" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">Mover (1-2 passos) • Disparar Taser • Revistar • Ativar EMP</text>
+  <text x="410" y="305" fill="#94a3b8" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Atualiza estado do tabuleiro e avança turno dos Robôs Anti-Vida</text>
+
+  <!-- Setas de ciclo -->
+  <path d="M 680 190 L 680 277 L 583 277" fill="none" stroke="#22c55e" stroke-width="2.5" marker-end="url(#seta-verde)"/>
+  <path d="M 245 277 L 140 277 L 140 198" fill="none" stroke="#22c55e" stroke-width="2.5" marker-end="url(#seta-verde)"/>
+</svg>
