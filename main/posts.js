@@ -7,6 +7,57 @@ const POSTS = [
    REGISTO DE PROGRESSO DO PROJETO SURVIVOR-BOT
    ============================================================ */
   {
+    semana: 5,
+    titulo: "Redesign do Robô, Desafios da Garra e Otimização de Ligações",
+    data: "16 de novembro a 20 de novembro de 2026",
+    objetivos: [
+      { texto: "Redesign estrutural do robô para otimizar o formato e agilidade", feito: true },
+      { texto: "Montagem e posterior desmontagem de um protótipo de garra por incompatibilidade com as lagartas", feito: true },
+      { texto: "Desenvolvimento de uma solução de recolha mais eficiente e integrada no chassis", feito: true },
+      { texto: "Revisão e arrumação de toda a cablagem e do sistema de fixação do bloco EV3 (brick)", feito: true },
+      { texto: "Instalação e calibração definitiva do sensor ecolocalizador (ultrassónico)", feito: true }
+    ],
+    descricao:
+      "Esta semana foi de intensa resolução de problemas físicos e otimização mecânica. Iniciámos com um redesign geral do robô para o tornar mais compacto e adaptado ao tabuleiro. No entanto, o nosso maior desafio surgiu com o protótipo da garra: após a montagem, percebemos que o seu curso e largura batiam constantemente nas lagartas triangulares, impedindo a locomoção e comprometendo a integridade das peças.\n\n" +
+      "Face a isto, tomámos a decisão de desmontar a garra original e projetar um mecanismo de recolha muito mais eficiente, totalmente alinhado com o formato do robô e sem interferência na tração. " +
+      "Aproveitámos esta intervenção profunda para rever por completo as ligações dos cabos, que estavam demasiado expostas, e reforçar a forma como o bloco EV3 (brick) está preso ao chassis, garantindo que não se solta com as vibrações.\n\n" +
+      "Por fim, definimos e fixámos a localização do ecolocalizador (sensor ultrassónico) na parte frontal, agora protegido mas com campo de visão desimpedidos para mapear o ambiente. Como bónus (e para manter a sanidade da equipa enquanto se reescrevia o código), contámos com a ajuda de um programador muito especial e 'crocante' no laboratório!",
+    fotos: [
+      { 
+        ficheiro: "redesign_ajuste_chassis.jpg", 
+        legenda: "O Novo Redesign: Robô mais compacto, com a cablagem revista e o ecolocalizador (sensor ultrassónico) em posição de destaque na frente."
+      },
+      { 
+        ficheiro: "revisao_garra_e_cabos.jpg", 
+        legenda: "Detalhe Frontal e Inferior: Nova estrutura de recolha integrada após a desmontagem da garra antiga, livre de interferências com as lagartas."
+      },
+      { 
+        ficheiro: "posicionamento_lateral.jpg", 
+        legenda: "Vista de Perfil: Ajustes nas lagartas e no alinhamento do chassis para acomodar o redesign."
+      },
+      { 
+        ficheiro: "organizacao_traseira.jpg", 
+        legenda: "Vista Traseira: Revisão das ligações de cabos e reforço da fixação do brick EV3."
+      },
+      { 
+        ficheiro: "pormenor_mecanismo.jpg", 
+        legenda: "Detalhe de Engrenagens: Otimização do espaço interno para evitar que os mecanismos batam nas lagartas."
+      },
+      { 
+        ficheiro: "vista_lateral_superior.jpg", 
+        legenda: "Vista Superior Lateral: Ajustes finais na estrutura para garantir estabilidade e proteção dos sensores."
+      },
+      { 
+        ficheiro: "pormenor_mecanismo_lagartas.jpg", 
+        legenda: "Detalhe das Lagartas: Vista final das lagartas após pequenos ajustes para melhor encaixe dos módulo principal."
+      },
+      { 
+        ficheiro: "bastidores_programacao_camarao.jpg", 
+        legenda: "A piada da semana: O nosso 'especialista' de apoio (um camarão de LEGO) a rever e a escrever o código no portátil enquanto nós redesenhávamos a mecânica!"
+      }
+    ]
+  },
+  {
     semana: 4,
     titulo: "Arquitetura de IA, Modelo Probabilístico (Markov), Planeamento A* e Simulador 6x6",
     data: "9 de novembro a 13 de novembro de 2026",
